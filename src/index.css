@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sora: 'Sora', sans-serif;
+    --font-ibm: 'IBM Plex Sans', sans-serif;
+
+    /* Veirdo Design System Color Tokens */
+    --color-zinc-700: #3f3f46;
+    --color-blue-900: #1e3a8a;
+    --color-slate-700: #334155;
+    --color-gray-700: #374151;
+    --color-stone-700: #44403c;
+    --color-fuchsia-900: #701a75;
+    --color-red-900: #7f1d1d;
+    --color-tertiary-800: #1e4569;
+    --color-indigo-800: #3730a3;
+    --color-emerald-900: #064e3b;
+    --color-pink-900: #831843;
+    --color-warning-900: #6b370d;
+    --color-rose-900: #881337;
+    --color-teal-900: #134e4a;
+    --color-sky-900: #0c4a6e;
+    --color-orange-900: #7c2d12;
+    --color-cyan-900: #164e63;
+    --color-green-900: #14532d;
+    --color-amber-900: #78350f;
+    --color-error-800: #8c1f20;
+
+    /* Mall360 Brand Accent Shades */
+    --color-primary-900: #00653d;
+    --color-primary-800: #008450;
+    --color-primary-700: #00aa68;
+    --color-primary-600: #00da85;
+    --color-primary-500: #00f092;
+    --color-primary-400: #33f3a8;
+    --color-primary-300: #54f5b6;
+    --color-primary-200: #8af8cd;
+    --color-primary-100: #b0fadd;
+
+    /* Secondary Fuchsia Tokens */
+    --color-secondary-900: #632668;
+    --color-secondary-800: #813288;
+    --color-secondary-700: #a740af;
+    --color-secondary-600: #d652e1;
+    --color-secondary-500: #eb5af7;
+    --color-secondary-400: #ef7bf9;
+    --color-secondary-300: #f290fa;
+    --color-secondary-200: #f6b3fb;
+    --color-secondary-100: #f9ccfd;
+    --color-secondary-50: #fdeffe;
+
+    /* Text & Neutral Tokens */
+    --color-text-primary: #131814;
+    --color-neutral-600: #4a4f54;
+    --color-neutral-400: #74797d;
+    --color-neutral-100: #c9cbcc;
+    --color-neutral-50: #eeeeef;
+
+    /* Backgrounds */
+    --color-bg-canvas: #ffffff;
+    --color-bg-ice: #f1f8ff;
+    --color-bg-cream: #f5f5dc;
+  }
+
+  body {
+    font-family: var(--font-ibm);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-canvas);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-sora);
+  }
+}
+
+/* Veirdo Design System Elevation Tokens */
+.shadow-veirdo-sm {
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px 0px;
+}
+
+.shadow-veirdo-md {
+  box-shadow: rgba(36, 47, 102, 0.16) 0px 0px 4px 0px;
+}
+
+.shadow-veirdo-lg {
+  box-shadow: rgba(17, 19, 64, 0.1) 0px 2px 8px 0px;
+}
+
+/* Veirdo Motion Timing */
+.transition-veirdo-fast {
+  transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1), all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-veirdo-base {
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.3s ease-in-out;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logo-orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-logo-orbit {
+  animation: logo-orbit 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes splash-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 15px rgba(0, 218, 133, 0.3));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 35px rgba(0, 218, 133, 0.7));
+  }
+}
+
+.animate-splash-pulse {
+  animation: splash-pulse 2s ease-in-out infinite;
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-progress-indeterminate {
+  animation: progress-indeterminate 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
